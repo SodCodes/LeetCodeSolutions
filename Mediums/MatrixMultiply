@@ -1,0 +1,36 @@
+class Solution:
+    def multiply(self, mat1: list[list[int]], mat2: list[list[int]]) -> list[list[int]]:
+
+    #Result of Multplication
+        C = []
+        
+        #Return an empty result since this is invalid, columsn of A must be equal to as rows of B
+        if len(mat1[0]) != len(mat2):
+            return C
+        
+        #iteriate through each row
+        for m in range(len(mat1)):
+            
+            #construct a list that will be appended after the row has been multipled
+            result = []
+            
+            
+            for p in range(len(mat2[0])):
+                
+                total = 0
+
+                for n in range(len(mat1[0])):
+                    
+                    num_A = mat1[m][n]
+                    
+                    num_B = mat2[n][p]
+                    
+                    total += num_A * num_B
+                
+                result.append(total)
+                    
+                
+            
+            C.append(result)
+        
+        return C
